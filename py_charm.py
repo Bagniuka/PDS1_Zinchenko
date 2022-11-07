@@ -23,3 +23,14 @@ def filedir_this_dir(path):
     print(f'Загальна кількість файлів та каталогів в поточній директиві: {len(os.listdir(path))}')
 
 filedir_this_dir("D:\\Start_Up\\DZ_5")
+
+def new_dict(name):
+    new_dict = {}
+    with open(name) as f:
+        for i in f:
+            key, value = i.split()
+            key_1 = key.replace(':', '')
+            new_dict[key_1] = value
+    return new_dict
+
+print(new_dict('DZ_5_New_file'))
