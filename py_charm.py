@@ -10,3 +10,16 @@ def new_file(*dict, name):
                 f.write(kv)
 
 new_file(dict_1, dict_2, dict_3, name="DZ_5_New_file")
+
+import os
+import os.path
+
+def filedir_this_dir(path):
+    for i in os.listdir(path):
+        if os.path.isdir(os.path.basename(i)) == True:
+            print(f'|{i}')
+        else:
+            print(i)
+    print(f'Загальна кількість файлів та каталогів в поточній директиві: {len(os.listdir(path))}')
+
+filedir_this_dir("D:\\Start_Up\\DZ_5")
