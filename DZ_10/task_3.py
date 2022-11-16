@@ -12,6 +12,4 @@ class ErrorBot(Exception):
             return 'CustomError has been raised'
 
 
-# Call of MyCustomError
-
 raise ErrorBot('Oh, I have a bad feeling about this')

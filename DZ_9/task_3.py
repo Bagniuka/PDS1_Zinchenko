@@ -1,7 +1,7 @@
 class Parallelogram:
 
-    def get_area(self, heigth, length):
-        return heigth * length
+    def get_area(self, width, length):
+        return width * length
 
 class Square(Parallelogram):
 
