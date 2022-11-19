@@ -15,6 +15,8 @@ def season():
         return time
     except ValueError:
         print("Введений не коректний номер місяця!")
+    else:
+        print("Сталася помилка!")
 
 
 

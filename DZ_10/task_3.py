@@ -1,4 +1,4 @@
-class ErrorBot(Exception):
+class MyError(Exception):
     def __init__(self, *args):
         if args:
             self.message = args[0]
@@ -12,4 +12,4 @@ class ErrorBot(Exception):
             return 'CustomError has been raised'
 
 
-raise ErrorBot('Oh, I have a bad feeling about this')
+raise MyError('Oh, I have a bad feeling about this')
