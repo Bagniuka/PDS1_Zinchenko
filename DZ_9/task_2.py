@@ -14,12 +14,11 @@ class TextProcessor:
         return clean_text
 
 
-class TextLoader:
-    __text_processor = TextProcessor()
+class TextLoader(TextProcessor):
     __clean_string = None
 
     def set_clean_text(self, text):
-        self.__clean_string = self.__text_processor.get_clean_string(text)
+        self.__clean_string = self.get_clean_string(text)
 
     @property
     def clean_stirng(self):
@@ -27,14 +26,12 @@ class TextLoader:
         return self.__clean_string
 
 
-class DataInterface:
-    __text_loader = TextLoader()
-
+class DataInterface(TextLoader):
     def process_texts(self, texts):
         clean_texts = []
         for text in texts:
-            self.__text_loader.set_clean_text(text)
-            clean = self.__text_loader.clean_stirng
+            self.set_clean_text(text)
+            clean = self.clean_stirng
             clean_texts.append(clean)
         return clean_texts
 
