@@ -1,8 +1,11 @@
 import socket
 
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
-    client.connect(('localhost', 50667))
-    while True:
-        client.send(input("Client: ").encode('utf-8'))
-        data = client.recv(1024)
-        print(data.decode('utf-8'))
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.connect(('localhost', 55555))
+    message = input('Enter message: ')
+    s.sendall(message.encode())
+    data = s.recv(1024).decode()
+    print(f'Recieved: {data}')
+
+# Запитати за числа, бітові дані, та декодінг і енкодінг
+# попрацювать з htttp
