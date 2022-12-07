@@ -28,13 +28,13 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             return mul_nums
 
 
-        ioloop = asyncio.get_event_loop()
+        oploop = asyncio.get_event_loop()
         tasks = [
-            ioloop.create_task(addition(num_lst)),
-            ioloop.create_task(subtraction(num_lst)),
-            ioloop.create_task(multiplication(num_lst))
+            oploop.create_task(addition(num_lst)),
+            oploop.create_task(subtraction(num_lst)),
+            oploop.create_task(multiplication(num_lst))
         ]
-        ioloop.run_until_complete(asyncio.wait(tasks))
+        oploop.run_until_complete(asyncio.wait(tasks))
 
         message = f'Addition values is: {tasks[0].result()};\n' \
                   f'Subtraction values is {tasks[1].result()};\n' \
