@@ -2,7 +2,7 @@ import socket
 import datetime as d
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    s.bind(('', 55001))
+    s.bind(('', 55000))
     s.listen(5)
     conn, addr = s.accept()
     while True:
