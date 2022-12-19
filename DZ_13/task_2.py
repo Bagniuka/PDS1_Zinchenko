@@ -17,7 +17,7 @@ for _ in range(0, 5000):
     str_list.append(w.random_word())
 
 finish_randomizer = time.perf_counter()
-print(f'Randomizer done in {finish_randomizer - start_randomizer} seconds.')
+print(f'Randomizer done in {finish_randomizer - start_randomizer} second(s).')
 
 
 # Bubble sorting
